@@ -12,5 +12,5 @@
 .container .navbar{
   width: 100%;
   height: 80px;
-  background: rgba(22,112,214,0.4);
+  background: rgb(22,112,214,0.4)
 }
