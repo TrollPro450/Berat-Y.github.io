@@ -42,8 +42,7 @@
   padding: 6px 13px;
   font-family: sans-serif;
 }
-.navbar ul li a.active
-.navbar ul li a:hover{
+.navbar ul li a{
   background-color: #ff6e00;
   border-radius: 2px;
 }
