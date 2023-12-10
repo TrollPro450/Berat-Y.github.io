@@ -15,7 +15,7 @@
   background: rgb(22,112,214,0.4)
 }
 
-.navbar .ul{
+.navbar ul{
   float: right;
   margin-right: 20px;
 }
