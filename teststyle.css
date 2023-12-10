@@ -30,6 +30,20 @@
   text-decoration: none;
   font-size: 30px;
   font-family: sans-serif;
-  color: #f3f3f3;
-  
+  color: #f3f3f3; 
 }
+.navbar ul li{
+  list-style: none;
+  display:inline-block;
+  margin: 0.8px;
+  line-height: 80px;
+}
+
+.navbar ul li{
+  color: white;
+  text-decoration:none;
+  font-size: 20px;
+  padding: 6px 13px;
+  font-family: sans-serif;
+}
+
