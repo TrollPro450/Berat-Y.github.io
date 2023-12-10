@@ -24,6 +24,8 @@
   display: inline-block;
   margin-left: 50px;
   margin-top: 20px;
+  height: 3px;
+  weidht: 3px;
 }
 
 .navbar .logo img{
