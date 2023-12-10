@@ -26,6 +26,8 @@
   font-size: 30px;
   font-family: sans-serif;
   color: #f3f3f3; 
+  height: 30px;
+  width: 30px;
 }
 .navbar ul li{
   list-style: none;
