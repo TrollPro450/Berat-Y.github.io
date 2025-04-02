@@ -205,33 +205,6 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
-
-  body.dark-mode {
-    background-color: black;
-    color: white;
-  }
-  
-  .dark-mode a, 
-  .dark-mode h1, 
-  .dark-mode p, 
-  .dark-mode span, 
-  .dark-mode div, 
-  .dark-mode button {
-    color: white !important;
-  }
-  
-  .dark-mode .profile-info-wrapper {
-    background-color: black !important;
-  }
-  
-  .dark-mode .link-button {
-    background-color: #222 !important; /* Butonları daha koyu yap */
-    border: 1px solid white;
-  }
-  
-  .dark-mode .link-icon-float {
-    box-shadow: none !important; /* Gölgeyi kaldır */
-  }
   
   .slider-container {
     position: relative;
