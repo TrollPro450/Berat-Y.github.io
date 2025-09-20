@@ -212,6 +212,7 @@
     max-width: 600px; /* Maksimum genişlik 600px */
     margin: 0 auto; /* Ortalamak için */
     overflow: hidden; /* Taşan resimleri gizler */
+    border-radius: 8px; 
   }
   
   .fotolar {
@@ -246,6 +247,8 @@
     max-width: 90%;
     max-height: 90%;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    border-radius: 8px; /* Kenarları 15 piksel yuvarlak yapar */
+    overflow: hidden;    /* İçeriğin dışarı taşmasını engeller */
   }
   
   /* Önceki ve sonraki butonlar */
@@ -260,6 +263,8 @@
     padding: 10px;
     cursor: pointer;
     z-index: 1010;
+    border-radius: 5px; /* Kenarları 15 piksel yuvarlak yapar */
+    overflow: hidden;    /* İçeriğin dışarı taşmasını engeller */
   }
   
   .fullscreen-prev {
@@ -300,10 +305,14 @@
   
   .prev {
     left: 0;
+    border-radius: 5px; /* Kenarları 15 piksel yuvarlak yapar */
+    overflow: hidden;    /* İçeriğin dışarı taşmasını engeller */
   }
   
   .next {
     right: 0;
+    border-radius: 5px; /* Kenarları 15 piksel yuvarlak yapar */
+    overflow: hidden;    /* İçeriğin dışarı taşmasını engeller */
   }
 
   
