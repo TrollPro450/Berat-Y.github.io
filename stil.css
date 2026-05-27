@@ -5,17 +5,18 @@
 }
 
 .by-slider-area {
-    width: 95%; max-width: 850px; height: 480px;
+    width: 95%; max-width: 850px;
+    /* Sabit yükseklik yerine orantılı aspect-ratio - her ekranda düzgün */
+    aspect-ratio: 16 / 9;
     position: relative; margin: 60px auto; padding: 5px;
     background: linear-gradient(45deg, var(--by-neon), transparent, var(--by-neon));
     border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.5);
     display: flex; align-items: center; justify-content: center;
-    /* DIŞARI TAŞMA BURADA BAŞLIYOR */
     overflow: visible; 
     z-index: 10;
 }
 
-.by-slide-item { display: none; width: 100%; height: 100%; }
+.by-slide-item { display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .by-slide-active { display: block; animation: byFade 0.5s ease; }
 
 @keyframes byFade { from { opacity: 0; transform: scale(0.99); } to { opacity: 1; transform: scale(1); } }
@@ -139,3 +140,106 @@
         color: rgb(50, 50, 50);
         text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
     }
+
+
+/* ============================
+   MOBİL RESPONSIVE DÜZELTMELERİ
+   ============================ */
+
+/* --- EĞİK ÇİZGİ: slice-div'i açmak layout'u bozuyor.
+   Bunun yerine hero wrapper'a clip-path ile eğik alt kenar ekliyoruz. --- */
+@media screen and (max-width: 991px) {
+
+    /* Hero fotoğrafı daha uzun olsun, profil resmi düzgün otursun */
+    .profile-bkg-hero-wrapper {
+        height: 320px !important;
+        background-position: center center !important;
+        background-size: cover !important;
+        /* Alt kenar eğik çizgi efekti — slice-div yerine */
+        clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+    }
+
+    /* Profil kutusu hero'nun içine doğru insin */
+    .profile-info-wrapper {
+        margin-top: -120px !important;
+    }
+
+    /* slice-div gizli kalsın (app.css'deki ayar geçerli) */
+    .slice-div { display: none !important; }
+}
+
+@media screen and (max-width: 767px) {
+    .profile-bkg-hero-wrapper {
+        height: 280px !important;
+        clip-path: polygon(0 0, 100% 0, 100% 76%, 0 100%);
+    }
+    .profile-info-wrapper {
+        margin-top: -100px !important;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .profile-bkg-hero-wrapper {
+        height: 230px !important;
+        clip-path: polygon(0 0, 100% 0, 100% 74%, 0 100%);
+    }
+    .profile-info-wrapper {
+        margin-top: -80px !important;
+    }
+}
+
+/* --- SLIDER butonları mobilde küçülsün --- */
+@media screen and (max-width: 991px) {
+    .by-slider-area { margin: 30px auto; }
+    .by-prev { left: 8px; width: 36px; height: 36px; font-size: 18px; }
+    .by-next { right: 8px; width: 36px; height: 36px; font-size: 18px; }
+}
+
+@media screen and (max-width: 479px) {
+    .by-slider-area {
+        width: 98% !important;
+        margin: 20px auto;
+        border-radius: 12px;
+    }
+    .by-modal-overlay .by-prev { left: 10px !important; width: 44px !important; height: 44px !important; }
+    .by-modal-overlay .by-next { right: 10px !important; width: 44px !important; height: 44px !important; }
+    .by-close-btn { font-size: 38px; top: 15px; right: 20px; }
+
+    .btn-ana-grup { width: 92% !important; max-width: none; }
+    .buton-sayac-wrapper {
+        width: 100%;
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    .buton-sayac-wrapper .contact-button.w-inline-block {
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+        border-radius: 8px 8px 0 0 !important;
+        padding: 0 15px !important;
+        height: 50px;
+        box-sizing: border-box;
+    }
+    .buton-sayac-wrapper .contact-button-image {
+        width: 18px !important;
+        height: 18px !important;
+        margin-right: 10px !important;
+        flex-shrink: 0 !important;
+    }
+    .buton-sayac-wrapper .contact-button-text {
+        font-size: clamp(10px, 3vw, 13px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
+    }
+    .sayac-kutusu {
+        width: 100% !important;
+        border-radius: 0 0 8px 8px !important;
+        border-left: 1px solid var(--toggle-grey) !important;
+        border-top: none !important;
+        justify-content: center;
+        height: 32px;
+        font-size: 12px;
+    }
+}
