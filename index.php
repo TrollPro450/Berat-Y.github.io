@@ -1,11 +1,51 @@
+<?php
+// Launcher sürümünü GitHub'daki metin dosyasından oku.
+$launcherVersion = '1.22.0'; // GitHub'a ulaşılamazsa kullanılacak varsayılan sürüm.
+$versionUrl = 'https://raw.githubusercontent.com/TrollPro450/Meb-Craft-Launcher/main/Versiyon-Launcher';
+$remoteVersion = false;
+
+if (function_exists('curl_init')) {
+    $ch = curl_init($versionUrl);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_CONNECTTIMEOUT => 4,
+        CURLOPT_TIMEOUT => 6,
+        CURLOPT_USERAGENT => 'MebLauncherWebsite/1.0'
+    ]);
+    $remoteVersion = curl_exec($ch);
+    $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    if ($httpCode < 200 || $httpCode >= 300) {
+        $remoteVersion = false;
+    }
+} else {
+    $context = stream_context_create([
+        'http' => [
+            'timeout' => 6,
+            'header' => "User-Agent: MebLauncherWebsite/1.0\r\n"
+        ]
+    ]);
+    $remoteVersion = @file_get_contents($versionUrl, false, $context);
+}
+
+if (is_string($remoteVersion)) {
+    $candidate = trim($remoteVersion);
+    if (preg_match('/^\d+(?:\.\d+){1,4}$/', $candidate)) {
+        $launcherVersion = $candidate;
+    }
+}
+
+$launcherVersionHtml = htmlspecialchars($launcherVersion, ENT_QUOTES, 'UTF-8');
+?>
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="utf-8">
     <meta name="google-site-verification" content="Y5WYGyzDQW6y8ve7lVn-6nn8P0agt-AHvojTjwXvqK4" />
-    <title>Meb Launcher İndir – Meb Craft &amp; Texture Pack | Berat Y.</title>
-    <meta name="description" content="Meb Launcher'ı Windows için indir. Berat Y. tarafından geliştirilen Meb Craft Launcher ve Texture Pack 3.0 için indirme bağlantılarını, özellikleri ve kurulum bilgilerini keşfet.">
-    <meta name="keywords" content="Meb Craft, MebCraft, Meb Craft Launcher, Meb Craft Texture Pack, Berat Y, Berat Y., Minecraft launcher, Minecraft texture pack">
+    <title>Meb Launcher İndir – Texture Pack | Berat Y.</title>
+    <meta name="description" content="Meb Launcher'ı Windows için indir. Daha önce Meb Craft ve Meb Craft Launcher adlarıyla tanınan proje hakkında indirme bağlantılarını, özellikleri ve kurulum bilgilerini keşfet.">
+    <meta name="keywords" content="Meb Craft, MebCraft, Meb Craft Launcher, Meb Craft Texture Pack, Meb Launcher, Berat Y, Berat Y., Minecraft launcher, Minecraft texture pack">
     <meta name="author" content="Berat Y.">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,15 +53,15 @@
     <link rel="canonical" href="https://beraty.unaux.com/">
 
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Meb Craft">
+    <meta property="og:site_name" content="Meb Launcher">
     <meta property="og:locale" content="tr_TR">
-    <meta property="og:title" content="Meb Launcher İndir – Meb Craft &amp; Texture Pack | Berat Y.">
-    <meta property="og:description" content="Windows için Meb Launcher ve Meb Craft Texture Pack 3.0 indirme bağlantıları, özellikler ve kurulum bilgileri. Berat Y. tarafından geliştirildi.">
+    <meta property="og:title" content="Meb Launcher İndir – Texture Pack | Berat Y.">
+    <meta property="og:description" content="Windows için Meb Launcher ve Texture Pack 3.0 indirme bağlantıları, özellikler ve kurulum bilgileri. Berat Y. tarafından geliştirildi.">
     <meta property="og:url" content="https://beraty.unaux.com/">
     <meta property="og:image" content="https://beraty.unaux.com/Foto/aaa.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Meb Launcher İndir – Meb Craft &amp; Texture Pack | Berat Y.">
-    <meta name="twitter:description" content="Windows için Meb Launcher ve Meb Craft Texture Pack 3.0 indirme bağlantıları, özellikler ve kurulum bilgileri.">
+    <meta name="twitter:title" content="Meb Launcher İndir – Texture Pack | Berat Y.">
+    <meta name="twitter:description" content="Windows için Meb Launcher ve Texture Pack 3.0 indirme bağlantıları, özellikler ve kurulum bilgileri.">
     <meta name="twitter:image" content="https://beraty.unaux.com/Foto/aaa.png">
 
     <link href="Foto/favicon.ico" rel="shortcut icon" type="image/x-icon">
@@ -38,8 +78,8 @@
           "@type": "WebSite",
           "@id": "https://beraty.unaux.com/#website",
           "url": "https://beraty.unaux.com/",
-          "name": "Meb Craft",
-          "alternateName": ["MebCraft", "Meb Craft Launcher", "Berat Y."],
+          "name": "Meb Launcher",
+          "alternateName": ["Meb Craft", "MebCraft", "Meb Craft Launcher", "Berat Y."],
           "inLanguage": "tr-TR",
           "publisher": { "@id": "https://beraty.unaux.com/#person" }
         },
@@ -56,11 +96,11 @@
         },
         {
           "@type": "SoftwareApplication",
-          "name": "Meb Craft Launcher",
-          "alternateName": "Meb Craft",
+          "name": "Meb Launcher",
+          "alternateName": ["Meb Craft Launcher", "Meb Craft", "MebCraft"],
           "applicationCategory": "GameApplication",
           "operatingSystem": "Windows",
-          "softwareVersion": "1.22.0.0",
+          "softwareVersion": <?= json_encode($launcherVersion, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?>,
           "url": "https://beraty.unaux.com/",
           "image": "https://beraty.unaux.com/Foto/aaa.png",
           "author": { "@id": "https://beraty.unaux.com/#person" }
@@ -95,9 +135,9 @@
 
                     <section class="by-sekme-panel" id="sekme-nedir" role="tabpanel" hidden>
                         <h2>Meb Launcher nedir?</h2>
-                        <p><strong>Meb Launcher</strong> (Meb Craft), <strong>Berat Y.</strong> tarafından geliştirilen, Windows için hazırlanmış bir <strong>Minecraft launcher</strong>'dır. Minecraft'ı tek bir yerden başlatmak, sürümleri yönetmek ve oyunu kendi ayarlarınla açmak için yazıldı.</p>
-                        <p>İsim, projenin arkasındaki dört arkadaşın baş harflerinden geliyor. Launcher ile birlikte <strong>Meb Craft Texture Pack</strong> da bu sayfadan indirilebiliyor.</p>
-                        <p class="by-not">Güncel sürümler: Launcher <strong>1.22.0.0</strong> &middot; Texture Pack <strong>3.0</strong></p>
+                        <p><strong>Meb Launcher</strong>, <strong>Berat Y.</strong> tarafından geliştirilen, Windows için hazırlanmış bir <strong>Minecraft launcher</strong>'dır. Minecraft'ı tek bir yerden başlatmak, sürümleri yönetmek ve oyunu kendi ayarlarınla açmak için yazıldı.</p>
+                        <p>İsim, projenin arkasındaki dört arkadaşın baş harflerinden geliyor. Launcher ile birlikte <strong>Meb Texture Pack</strong> de bu sayfadan indirilebiliyor.</p>
+                        <p class="by-not">Güncel sürümler: Launcher <strong><?= $launcherVersionHtml ?></strong> &middot; Texture Pack <strong>3.0</strong></p>
                         <button type="button" class="by-sekme-geri" data-sekme="ana">İndirmelere git &rarr;</button>
                     </section>
 
@@ -118,8 +158,8 @@
                         <h2>Sıkça sorulan sorular</h2>
                         <details><summary>Meb Launcher hangi sistemde çalışır?</summary><p>Windows için geliştirildi.</p></details>
                         <details><summary>Nereden indirebilirim?</summary><p>"Ana Sayfa" sekmesindeki indirme butonlarından. Launcher ve Texture Pack için ayrı butonlar var.</p></details>
-                        <details><summary>Meb Craft ile Meb Launcher aynı şey mi?</summary><p>Evet, aynı proje. Proje önce Meb Craft adıyla çıktı.</p></details>
-                        <details><summary>Bir sorun yaşarsam ne yapmalıyım?</summary><p>Sayfanın altındaki Discord sunucusuna gelip yazabilirsin.</p></details>
+                        
+                        <details><summary>Bir sorun yaşarsam ne yapmalıyım?</summary><p>Soruların, önerilerin veya karşılaştığın sorunlar için <a href="mailto:trollpro460@gmail.com">trollpro460@gmail.com</a> adresinden bizimle iletişime geçebilirsin. 💌</p></details>
                         <details><summary>MEB, Milli Eğitim Bakanlığı mı?</summary><p>Hayır. MEB, projenin arkasındaki arkadaşların baş harflerinden oluşuyor. Bakanlıkla ilgisi yok, bağımsız bir projedir.</p></details>
                         <button type="button" class="by-sekme-geri" data-sekme="ana">İndirmelere git &rarr;</button>
                     </section>
@@ -133,7 +173,7 @@
                         <div class="buton-sayac-wrapper">
                             <a href="indir.php?dosya=launcher" class="contact-button w-inline-block">
                                 <img src="Foto/download.png" class="contact-button-image">
-                                <div class="contact-button-text">Windows : Meb Craft Launcher 1.22.0.0</div>
+                                <div class="contact-button-text">Windows : Meb Launcher <?= $launcherVersionHtml ?></div>
                             </a>
                             <div class="sayac-kutusu l-kenar">
                                 <?php 
@@ -150,7 +190,7 @@
                         <div class="buton-sayac-wrapper">
                             <a href="indir.php?dosya=texture" class="contact-button w-inline-block">
                                 <img src="Foto/download.png" class="contact-button-image">
-                                <div class="contact-button-text">Windows : Meb Craft (Texture Pack) 3.0</div>
+                                <div class="contact-button-text">Windows : Meb Texture Pack 3.0</div>
                             </a>
                             <div class="sayac-kutusu t-kenar">
                                 <?php 
