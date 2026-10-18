@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="google-site-verification" content="Y5WYGyzDQW6y8ve7lVn-6nn8P0agt-AHvojTjwXvqK4" />
-    <title>Meb Launcher &amp; Texture Pack İndir | Berat Y.</title>
-    <meta name="description" content="Berat Y. tarafından geliştirilen Meb Launcher Minecraft Launcher ve Meb Launcher Texture Pack 3.0'ı Windows için buradan indirebilirsin.">
+    <title>Meb Launcher İndir – Meb Craft &amp; Texture Pack | Berat Y.</title>
+    <meta name="description" content="Meb Launcher'ı Windows için indir. Berat Y. tarafından geliştirilen Meb Craft Launcher ve Texture Pack 3.0 için indirme bağlantılarını, özellikleri ve kurulum bilgilerini keşfet.">
     <meta name="keywords" content="Meb Craft, MebCraft, Meb Craft Launcher, Meb Craft Texture Pack, Berat Y, Berat Y., Minecraft launcher, Minecraft texture pack">
     <meta name="author" content="Berat Y.">
     <meta name="robots" content="index, follow">
@@ -15,13 +15,13 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Meb Craft">
     <meta property="og:locale" content="tr_TR">
-    <meta property="og:title" content="Meb Craft Launcher &amp; Texture Pack - Berat Y.">
-    <meta property="og:description" content="Windows için Meb Craft Minecraft Launcher ve Meb Craft Texture Pack 3.0. Berat Y. tarafından geliştirildi.">
+    <meta property="og:title" content="Meb Launcher İndir – Meb Craft &amp; Texture Pack | Berat Y.">
+    <meta property="og:description" content="Windows için Meb Launcher ve Meb Craft Texture Pack 3.0 indirme bağlantıları, özellikler ve kurulum bilgileri. Berat Y. tarafından geliştirildi.">
     <meta property="og:url" content="https://beraty.unaux.com/">
     <meta property="og:image" content="https://beraty.unaux.com/Foto/aaa.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Meb Craft Launcher &amp; Texture Pack - Berat Y.">
-    <meta name="twitter:description" content="Windows için Meb Craft Minecraft Launcher ve Texture Pack 3.0.">
+    <meta name="twitter:title" content="Meb Launcher İndir – Meb Craft &amp; Texture Pack | Berat Y.">
+    <meta name="twitter:description" content="Windows için Meb Launcher ve Meb Craft Texture Pack 3.0 indirme bağlantıları, özellikler ve kurulum bilgileri.">
     <meta name="twitter:image" content="https://beraty.unaux.com/Foto/aaa.png">
 
     <link href="Foto/favicon.ico" rel="shortcut icon" type="image/x-icon">
