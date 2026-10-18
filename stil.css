@@ -89,14 +89,16 @@
     /* Buton ve sayacı birbirine yapıştıran taşıyıcı */
     .buton-sayac-wrapper {
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: center;
+        border-radius: 8px;
+        overflow: hidden; /* Zoom'da araya sızan beyaz çizgiyi keser */
     }
 
-    /* Orijinal buton ayarları - sağ köşeleri birleşim için düzleştirildi */
+    /* Orijinal buton ayarları - köşeler artık wrapper tarafından yuvarlanıyor */
     .contact-button {
         margin: 0 !important;
-        border-radius: 8px 0 0 8px !important;
+        border-radius: 0 !important;
         height: 50px;
         display: flex;
         align-items: center;
@@ -104,6 +106,8 @@
         text-decoration: none;
         white-space: nowrap;
         color: white !important;
+        position: relative;
+        z-index: 1;
     }
 
     /* İstediğin siyahımsı, gölgeli sayaç kutusu */
@@ -113,9 +117,8 @@
         align-items: center;
         /* Siyahımsı cam efekti */
         background-image: linear-gradient(to right, #f4f4f7 , #ff4b2b);
-        border: 1px solid var(--toggle-grey);
-        border-left: none;
-        border-radius: 0 8px 8px 0;
+        border: none; /* Çizginin kaynağı olan kenarlık kaldırıldı */
+        border-radius: 0 !important;
         padding: 0 15px;
         color: #ffffff !important;
         font-family: sans-serif;
@@ -123,6 +126,7 @@
         font-weight: bold;
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
+        box-sizing: border-box;
     }
 
     /* Yan renk çizgileri */
@@ -210,6 +214,8 @@
         width: 100%;
         flex-direction: column !important;
         align-items: stretch !important;
+        border-radius: 8px;
+        overflow: hidden;
     }
     .buton-sayac-wrapper .contact-button.w-inline-block {
         display: flex !important;
@@ -235,9 +241,8 @@
     }
     .sayac-kutusu {
         width: 100% !important;
-        border-radius: 0 0 8px 8px !important;
-        border-left: 1px solid var(--toggle-grey) !important;
-        border-top: none !important;
+        border-radius: 0 !important;
+        border: none !important;
         justify-content: center;
         height: 32px;
         font-size: 12px;

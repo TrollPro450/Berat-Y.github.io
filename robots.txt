@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /indir.php
+Disallow: /baglan_site.php
+
+Sitemap: https://beraty.unaux.com/sitemap.xml
