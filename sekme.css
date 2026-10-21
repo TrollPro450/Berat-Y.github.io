@@ -1,21 +1,21 @@
 /* Sekmeler - beyaz/temiz stil, mavi (#1590e6) + kırmızı (#e8432a) vurgu. Geri almak için bu dosyayı ve index.php'deki sekme kodunu sil. */
 .by-sekmeler{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;width:fit-content;max-width:100%;margin:12px auto 22px;padding:6px;
   background:#fff;border:1px solid #dfe5ee;border-radius:14px;box-shadow:0 6px 18px rgba(20,30,60,.10);position:relative;z-index:5}
-.by-sekme{font-family:inherit;font-size:15px;font-weight:600;color:#1b2230;background:transparent;border:0;border-radius:10px;padding:9px 16px;cursor:pointer;transition:background .2s,box-shadow .2s,transform .1s}
+.by-sekme{font-family:inherit;font-size:15px;font-weight:500;color:#1b2230;background:transparent;border:0;border-radius:10px;padding:9px 16px;cursor:pointer;transition:background .2s,box-shadow .2s,transform .1s}
 .by-sekme:hover{background:#eef4fb}
 .by-sekme:active{transform:scale(.97)}
 .by-sekme:focus-visible,.by-sekme-geri:focus-visible{outline:3px solid #1590e6;outline-offset:2px}
-.by-sekme.aktif{color:#fff;background:linear-gradient(110deg,#1590e6,#e8432a);box-shadow:0 4px 14px rgba(21,144,230,.35)}
+.by-sekme.aktif{font-weight:600;color:#fff;background:linear-gradient(110deg,#1590e6,#e8432a);box-shadow:0 4px 14px rgba(21,144,230,.35)}
 
 .by-sekme-panel{width:100%;max-width:680px;margin:0 auto 24px;padding:26px 28px;color:#1b2230;
   background:linear-gradient(135deg,rgba(21,144,230,.07),#fff 40%,rgba(232,67,42,.07));
   border:1px solid;border-color:rgba(21,144,230,.45) rgba(232,67,42,.45) rgba(232,67,42,.45) rgba(21,144,230,.45);
   border-radius:20px;box-shadow:0 10px 28px rgba(20,30,60,.10);text-align:left;font-size:16px;line-height:1.7;position:relative;z-index:5;animation:byFade .35s ease}
 .by-sekme-panel[hidden],.by-sekme-ana[hidden]{display:none!important}
-.by-sekme-panel h2{margin:0 0 12px;font-size:22px;font-weight:700;color:#0e1523}
-.by-sekme-panel h3{margin:0 0 4px;font-size:16px;font-weight:700;color:#0e1523}
+.by-sekme-panel h2{margin:0 0 12px;font-size:22px;font-weight:600;color:#0e1523}
+.by-sekme-panel h3{margin:0 0 4px;font-size:16px;font-weight:600;color:#0e1523}
 .by-sekme-panel p{margin:0 0 14px;color:#1b2230}
-.by-sekme-panel strong{color:#0e1523}
+.by-sekme-panel strong{color:#0e1523;font-weight:600}
 .by-not{padding:12px 16px;border-left:5px solid #1590e6;background:#eef6fd;border-radius:0 12px 12px 0}
 
 .by-kartlar{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
@@ -24,13 +24,13 @@
 .by-kart p{margin:0;font-size:15px;line-height:1.6}
 
 .by-sekme-panel details{margin-bottom:12px;background:#fff;border:1px solid #dfe5ee;border-radius:12px;overflow:hidden}
-.by-sekme-panel summary{padding:14px 44px 14px 18px;cursor:pointer;font-weight:600;font-size:16px;color:#0e1523;list-style:none;position:relative}
+.by-sekme-panel summary{padding:14px 44px 14px 18px;cursor:pointer;font-weight:500;font-size:16px;color:#0e1523;list-style:none;position:relative}
 .by-sekme-panel summary::-webkit-details-marker{display:none}
 .by-sekme-panel summary::after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:24px;font-weight:700;color:#1590e6}
 .by-sekme-panel details[open] summary::after{content:"\2212";color:#e8432a}
 .by-sekme-panel details p{margin:0;padding:0 18px 16px}
 
-.by-sekme-geri{margin-top:6px;padding:10px 20px;font-family:inherit;font-weight:600;font-size:15px;color:#fff;background:linear-gradient(110deg,#1590e6,#e8432a);border:0;border-radius:10px;cursor:pointer;transition:box-shadow .2s,transform .1s}
+.by-sekme-geri{margin-top:6px;padding:10px 20px;font-family:inherit;font-weight:500;font-size:15px;color:#fff;background:linear-gradient(110deg,#1590e6,#e8432a);border:0;border-radius:10px;cursor:pointer;transition:box-shadow .2s,transform .1s}
 .by-sekme-geri:hover{box-shadow:0 6px 16px rgba(21,144,230,.4)}
 .by-sekme-geri:active{transform:scale(.97)}
 
@@ -43,7 +43,7 @@
 }
 
 /* ===== Ana Sayfa: isim, sürüm etiketleri ve indirme butonları ===== */
-.profile-info-wrapper .by-isim{display:block!important;width:100%!important;align-self:center!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important;font-size:clamp(26px,4vw,32px)!important;font-weight:700!important;color:#0e1523!important;letter-spacing:0;margin-top:-12px!important;margin-bottom:0!important;line-height:1.2}
+.profile-info-wrapper .by-isim{display:block!important;width:100%!important;align-self:center!important;text-align:center!important;margin-left:auto!important;margin-right:auto!important;font-size:clamp(26px,4vw,32px)!important;font-weight:500!important;color:#0e1523!important;letter-spacing:0;margin-top:-12px!important;margin-bottom:0!important;line-height:1.2}
 /* iki etiket YAN YANA (sığmazsa alt alta iner) */
 .by-sekme-ana .by-etiketler{display:flex!important;flex-direction:row!important;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 10px;width:100%;margin:6px 0 4px}
 .by-sekme-ana .by-etiketler .profile-bio{display:inline-block!important;width:auto!important;max-width:none!important;flex:0 0 auto;margin:0!important;padding:6px 16px;font-size:15px!important;font-weight:700;color:#1b2230!important;line-height:1.4;
@@ -56,19 +56,19 @@
 .by-sekme-ana .buton-sayac-wrapper{display:flex!important;flex-direction:row!important;align-items:stretch!important;flex:none;width:100%;border-radius:14px!important;border:1px solid #dfe5ee;box-shadow:0 6px 18px rgba(20,30,60,.12);background:#fff;overflow:hidden;transition:transform .2s,box-shadow .2s}
 .by-sekme-ana .buton-sayac-wrapper:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(20,30,60,.18)}
 .by-sekme-ana .buton-sayac-wrapper .contact-button.w-inline-block{flex:1 1 auto;width:auto!important;min-width:0;box-sizing:border-box;background:#fff!important;min-height:60px;height:auto!important;padding:8px 12px!important;border-radius:0!important;justify-content:flex-start}
-.by-sekme-ana .buton-sayac-wrapper .contact-button-text{font-size:14px;font-weight:600;line-height:1.25;color:#0e1523!important;text-shadow:none!important;white-space:normal}
+.by-sekme-ana .buton-sayac-wrapper .contact-button-text{font-size:14px;font-weight:500;line-height:1.25;color:#0e1523!important;text-shadow:none!important;white-space:normal}
 .by-sekme-ana .buton-sayac-wrapper .contact-button-image{width:22px!important;height:22px!important;flex-shrink:0;margin-right:10px!important}
 
 /* butonun üstündeki ortalanmış başlık */
 .by-sekme-ana .by-indir-kutu{display:flex;flex-direction:column;flex:1 1 320px;max-width:380px;min-width:0}
-.by-sekme-ana .by-baslik{text-align:center;font-size:15px;font-weight:600;margin:0 0 10px;color:#0e1523}
+.by-sekme-ana .by-baslik{text-align:center;font-size:15px;font-weight:500;margin:0 0 10px;color:#0e1523}
 .by-sekme-ana .by-baslik::after{content:"";display:block;width:40px;height:3px;margin:6px auto 0;border-radius:3px}
 .by-sekme-ana .by-baslik-l::after{background:linear-gradient(110deg,#ff6a3d,#c4161c)}
 .by-sekme-ana .by-baslik-t::after{background:linear-gradient(110deg,#2aa8ff,#0a5fb0)}
 
 /* sayaç: butonun yanında dar ayrı kutu */
 .by-sekme-ana .buton-sayac-wrapper .sayac-kutusu{display:flex!important;align-items:center;justify-content:center;flex:0 0 96px;width:96px!important;min-width:0;height:auto!important;padding:0 8px!important;box-sizing:border-box;
-  text-align:center;font-size:13px!important;font-weight:700;line-height:1.2;color:#fff!important;text-shadow:none!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border:0!important;border-radius:0!important}
+  text-align:center;font-size:13px!important;font-weight:600;line-height:1.2;color:#fff!important;text-shadow:none!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border:0!important;border-radius:0!important}
 .by-sekme-ana .buton-sayac-wrapper .sayac-kutusu.l-kenar{background:linear-gradient(110deg,#ff6a3d,#c4161c)!important}
 .by-sekme-ana .buton-sayac-wrapper .sayac-kutusu.t-kenar{background:linear-gradient(110deg,#2aa8ff,#0a5fb0)!important}
 
@@ -77,4 +77,41 @@
   .by-sekme-ana .buton-sayac-wrapper .contact-button-text{font-size:13px}
   .by-sekme-ana .buton-sayac-wrapper .sayac-kutusu{flex-basis:84px;width:84px!important;font-size:12px!important}
   .by-sekme-ana .by-etiketler .profile-bio{font-size:12px!important;padding:5px 10px}
+}
+
+/* ===== Sürümler sekmesi ===== */
+.by-sekme-panel.by-genis{max-width:780px}
+.by-surumler{display:flex;flex-direction:column;gap:18px;margin:16px 0}
+.by-surum{display:grid;grid-template-columns:minmax(0,240px) 1fr;gap:16px;align-items:start;padding:16px 18px;background:#fff;border:1px solid #dfe5ee;border-left:5px solid #1590e6;border-radius:14px;box-shadow:0 2px 8px rgba(20,30,60,.06)}
+.by-surum:nth-child(even){border-left-color:#e8432a}
+.by-surum.by-tek{grid-template-columns:1fr}
+.by-medyalar{display:flex;flex-direction:column;gap:8px}
+.by-medya{position:relative;display:block;border-radius:10px;overflow:hidden;line-height:0}
+.by-gorsel{width:100%;height:auto;border-radius:10px;display:block}
+.by-oynat{position:absolute;left:8px;bottom:8px;padding:4px 10px;font-size:12px;font-weight:600;line-height:1.4;color:#fff;background:rgba(232,67,42,.92);border-radius:999px}
+.by-medya:hover .by-gorsel{filter:brightness(.92)}
+.by-surum-yazi h3{margin:0 0 6px;font-size:18px;font-weight:600;color:#0e1523}
+.by-surum-yazi p{margin:0 0 12px}
+.by-btnler{display:flex;flex-wrap:wrap;gap:8px}
+.by-indir-btn{display:inline-block;padding:9px 16px;font-size:14px;font-weight:500;color:#fff!important;text-decoration:none!important;background:linear-gradient(110deg,#1590e6,#e8432a);border-radius:10px;transition:box-shadow .2s,transform .1s}
+.by-indir-btn:hover{box-shadow:0 6px 16px rgba(21,144,230,.4)}
+.by-indir-btn:active{transform:scale(.97)}
+.by-banner{grid-column:1/-1;width:100%;height:auto;border-radius:10px;display:block}
+.by-sekme-panel > .by-banner{margin:6px 0 4px}
+.by-galeri{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.by-galeri figure{margin:0}
+.by-galeri img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;display:block}
+.by-galeri figcaption{margin-top:4px;font-size:13px;text-align:center;color:#3a4254}
+@media (max-width:600px){
+  .by-surum{grid-template-columns:1fr}
+}
+
+/* İndirme butonlarının iç kenarlık sorununu düzelt */
+.by-sekme-ana .buton-sayac-wrapper .contact-button.w-inline-block,
+.by-sekme-ana .buton-sayac-wrapper .contact-button.w-inline-block:hover,
+.by-sekme-ana .buton-sayac-wrapper .contact-button.w-inline-block:focus,
+.by-sekme-ana .buton-sayac-wrapper .contact-button.w-inline-block:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
